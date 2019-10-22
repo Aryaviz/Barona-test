@@ -1,0 +1,82 @@
+## 1. Create a function
+
+Create a function which takes in two numbers and returns the larger of these two values.
+
+def my_function(a,b):
+    if a>b:
+        return a
+    else:
+        return b
+c= my_function(3,2)
+c
+    
+
+## 2. Create data models
+
+Create data models (classes / objects) for describing the following relations:
+
+Customer account which has:
+- a company name
+- a list of contact persons (name and email).
+
+class Customer:
+    company_name=""
+    contact_name=[]
+    contact_email=[]
+p1= Customer()
+p1.company_name = "companyXXX"
+p1.contact_name.append("ABCXXX")
+p1.contact_email.append("ABCXXX@gmail.com")
+p1.company_name, p1.contact_name, p1.contact_email    
+
+
+## 3. Create a data query using SQL (or other query language such as SOQL)
+
+We have two tables which hold the following information:
+
+CREATE TABLE Car (
+    carId int NOT NULL,
+    brand varchar(255) NOT NULL,
+    model varchar(255),
+    PRIMARY KEY (carId)
+);
+
+CREATE TABLE CarAttributes (
+    attributeId int NOT NULL,
+    carId int NOT NULL,
+    color varchar(255),
+    year varchar(255),
+    PRIMARY KEY (attributeId),
+    FOREIGN KEY (carId) REFERENCES Car(carId)
+);
+
+How do you select the carId's of all the cars which have a brand 'bmw'?
+
+
+
+select carId From Car where brand = 'bmw';
+
+## Bonus question 4. Create another data query
+
+How do you select the carId's and their colors for all the cars which have a brand 'bmw'?
+
+select a.carId,b.color from Car a, CarAttributes b where a.carId = b.carId and a.brand ='bmw';
+
+## Bonus question 5. Input validation
+
+Create a function which takes in a string and returns true if that string is a valid Finnish mobile phone number (without the country code)
+
+Prove your answer with these inputs:
+
+040-1234567 => True
+0509876543 => True
+
+0401234 => False
+foo => False
+
+def validate_number(inp):
+    if len(inp)!=10
+        return "false"
+    if 
+    
+
